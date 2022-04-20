@@ -6,19 +6,27 @@ public class HomeWork3 {
     public static void main(String[] args) {
         System.out.println("Задание №1");
         invertArray();
+
         System.out.println("Задание №2");
         newArray100();
+
         System.out.println("Задание №3");
         arrayX2LessSix();
+
         System.out.println("Задание №4");
         quadArray();
+
         System.out.println("Задание №5");
-        arrayInitValue(40, 12);
+        System.out.println(Arrays.toString(arrayInitValue(40, 12)));
+        System.out.println();
+
         System.out.println("Задание №6");
         arrMinMax();
+
         System.out.println("Задание №7");
         System.out.println(arrayBalance(new int[]{2, 2, 2, 1, 2, 2, 10, 1}));
         System.out.println();
+
         System.out.println("Задание №8");
         moveArray(new int[]{3, 5, 6, 1}, -614);
     }
@@ -75,13 +83,10 @@ public class HomeWork3 {
     }
 
 
-    private static void arrayInitValue(int len, int initialValue) {
+    private static int[] arrayInitValue(int len, int initialValue) {
         int[] array = new int[len];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = initialValue;
-        }
-        System.out.println(Arrays.toString(array));
-        System.out.println();
+        Arrays.fill(array,initialValue);
+        return array;
     }
 
     private static void arrMinMax() {
@@ -91,7 +96,8 @@ public class HomeWork3 {
         for (int i = 0; i < a.length; i++) {
             if (a[i] > max) {
                 max = a[i];
-            } else if (a[i] < min) {
+            }
+            if (a[i] < min) {
                 min = a[i];
             }
         }
@@ -120,7 +126,7 @@ public class HomeWork3 {
     }
 
     private static void moveArray(int[] arr, int n) {
-        System.out.println("Массив " + Arrays.toString(arr) + " cмещаем на элементы на " + n + " позиций");
+        System.out.println("Массив " + Arrays.toString(arr) + " cмеcтить элементы на " + n + " позиций");
         n = n % arr.length;
         if (n >= 0) {
             for (int i = 0; i < n; i++) {
