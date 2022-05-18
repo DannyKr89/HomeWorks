@@ -35,4 +35,9 @@ public class Men implements Participant {
         System.out.println("Человек прыгает");
 
     }
+
+    @Override
+    public String toString() {
+        return "Человек с именем " + name + ", способный пробежать дистанцию в " + distance + " км., и прыгнуть через стену высотой " + height + " см.";
+    }
 }

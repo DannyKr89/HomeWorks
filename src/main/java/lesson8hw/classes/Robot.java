@@ -34,4 +34,9 @@ public class Robot implements Participant {
     public void jump() {
         System.out.println("Робот прыгает");
     }
+
+    @Override
+    public String toString() {
+        return "Робот с именем " + name + ", способный пробежать дистанцию в " + distance + " км., и прыгнуть через стену высотой " + height + " см.";
+    }
 }

@@ -35,4 +35,9 @@ public class Cat implements Participant {
         System.out.println("Кот прыгает");
 
     }
+
+    @Override
+    public String toString() {
+        return "Кот с именем " + name + ", способный пробежать дистанцию в " + distance + " км., и прыгнуть через стену высотой " + height + " см.";
+    }
 }
