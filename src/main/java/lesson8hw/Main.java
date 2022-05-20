@@ -9,9 +9,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     public static void main(String[] args) {
-        Participant men = new Men("Человечек", ThreadLocalRandom.current().nextInt(5, 40), ThreadLocalRandom.current().nextInt(100, 250));
-        Participant cat = new Cat("Котик", ThreadLocalRandom.current().nextInt(1, 20), ThreadLocalRandom.current().nextInt(60, 240));
-        Participant robot = new Robot("Ведерко", ThreadLocalRandom.current().nextInt(5, 100), ThreadLocalRandom.current().nextInt(200, 500));
+        Participant men = new Men(name(), ThreadLocalRandom.current().nextInt(5, 40), ThreadLocalRandom.current().nextInt(100, 250));
+        Participant cat = new Cat(name(), ThreadLocalRandom.current().nextInt(1, 20), ThreadLocalRandom.current().nextInt(60, 240));
+        Participant robot = new Robot(name(), ThreadLocalRandom.current().nextInt(5, 100), ThreadLocalRandom.current().nextInt(200, 500));
         Obstacles threadmill = new Treadmill(ThreadLocalRandom.current().nextInt(1, 100));
         Obstacles wall = new Wall(ThreadLocalRandom.current().nextInt(60, 500));
         Participant[] participants = {men, cat, robot};
@@ -51,8 +51,8 @@ public class Main {
             }
         }
     }
-//    private static String name(){
-//        String name = Names.valueOf();
-//        return name;
-//    }
+    private static String name(){
+        String[] name = {"Артем","Димон","Саня","Ванек","Боб","Том","Андрей","Миша","Вовка","Карл","Джони","Арнольд","Гоша","Антон","Боря","Филипп","Захар","Боря","Валера","Никита"};
+        return name[ThreadLocalRandom.current().nextInt(name.length)];
+    }
 }
