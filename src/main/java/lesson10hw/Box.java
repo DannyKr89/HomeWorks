@@ -3,15 +3,13 @@ package lesson10hw;
 public class Box<E> {
     private E[] box;
     private static final int DEFAULT_SIZE = 5;
-
     private int element;
-    private int id;
 
     public Box(int size) {
         this.box = (E[]) new Object[size];
         element = 0;
-        id++;
     }
+
     public Box() {
         this(DEFAULT_SIZE);
     }
@@ -28,7 +26,6 @@ public class Box<E> {
         element++;
     }
 
-
     public void printInfo() {
         System.out.println("В коробке: ");
         for (E box : box) {
@@ -37,20 +34,27 @@ public class Box<E> {
     }
 
     public double getWeight() {
-        if (box[0] instanceof Apple){
+        if (box[0] instanceof Apple) {
             return element * Apple.getWeight();
         }
-        if (box[0] instanceof Orange){
+        if (box[0] instanceof Orange) {
             return element * Orange.getWeight();
         }
         return 0;
     }
 
     public boolean compare(Box<?> box) {
-        if (this.getWeight() == box.getWeight()){
+        if (this.getWeight() == box.getWeight()) {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void pourTo(Box box2) {
+        for (int i = 0; i < box.length; i++) {
+            box2.add(box[i]);
+            box[i] = null;
         }
     }
 }
