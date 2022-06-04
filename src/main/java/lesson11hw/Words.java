@@ -3,7 +3,7 @@ package lesson11hw;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Main {
+public class Words {
     public static void main(String[] args) {
         ArrayList<String> arr = new ArrayList<>();
         arr.add("Hello");
