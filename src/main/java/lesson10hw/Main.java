@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Box<Apple> boxA = new Box<>();
         Box<Orange> boxO = new Box<>();
+        Box<Fruit> boxF = new Box<>();
         boxA.add(new Apple());
         boxA.add(new Apple());
         boxA.add(new Apple());
@@ -19,16 +20,21 @@ public class Main {
 
         boxA.printInfo();
         boxO.printInfo();
+        boxF.printInfo();
 
         System.out.println("Вес коробки с Яблоками: " + boxA.getWeight());
         System.out.println("Вес коробки с Апельсинами: " + boxO.getWeight());
 
-        if (boxA.compare(boxO)){
+        if (boxA.compare(boxO)) {
             System.out.println("Коробки равны по весу!");
         } else {
             System.out.println("Коробки не равны по весу!");
         }
 
+        boxA.pourTo(boxF);
+        boxA.printInfo();
+        boxO.printInfo();
+        boxF.printInfo();
     }
 
 
