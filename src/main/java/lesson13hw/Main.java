@@ -10,7 +10,6 @@ public class Main {
     public static final CountDownLatch cdlStart = new CountDownLatch(CARS_COUNT);
     public static final CountDownLatch cdlEnd = new CountDownLatch(CARS_COUNT);
     public static final CountDownLatch cdlWin = new CountDownLatch(1);
-    public static final Semaphore smp = new Semaphore(2);
     public static String winnerName = "";
 
     public static void main(String[] args) throws InterruptedException {

@@ -1,10 +1,7 @@
 package lesson12hw;
 
 import java.util.Arrays;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 public class Main {
     public static final int SIZE = 10000000;
@@ -60,17 +57,15 @@ public class Main {
         Arrays.fill(arr, 1);
         ExecutorService pool = Executors.newFixedThreadPool(2);
         long a = System.currentTimeMillis();
-        pool.execute(new Runnable() {
-            @Override
-            public void run() {
+        pool.execute(() -> {
                 for (int i = 0; i < arr.length; i++) {
                     arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
                 }
-            }
+
         });
         pool.shutdown();
         System.out.println(System.currentTimeMillis() - a);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
 
     }
 }

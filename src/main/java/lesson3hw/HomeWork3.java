@@ -31,7 +31,7 @@ public class HomeWork3 {
         moveArray(new int[]{3, 5, 6, 1}, -614);
     }
 
-    private static void invertArray() {
+    public static void invertArray() {
         int[] arr = {1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1};
         System.out.println(Arrays.toString(arr) + " - нормальный массив");
         for (int i = 0; i < arr.length; i++) {
@@ -125,7 +125,7 @@ public class HomeWork3 {
         return false;
     }
 
-    private static void moveArray(int[] arr, int n) {
+    public static int[] moveArray(int[] arr, int n) {
         System.out.println("Массив " + Arrays.toString(arr) + " cмеcтить элементы на " + n + " позиций");
         n = n % arr.length;
         if (n >= 0) {
@@ -147,6 +147,7 @@ public class HomeWork3 {
             }
             System.out.println(Arrays.toString(arr));
         }
+        return arr;
     }
 }
 
