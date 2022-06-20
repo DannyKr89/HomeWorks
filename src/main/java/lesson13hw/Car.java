@@ -44,7 +44,7 @@ public class Car implements Runnable {
         lock.lock();
         Main.winnerName = getName();
         Main.cdlWin.countDown();
+        lock.unlock();
         Main.cdlEnd.countDown();
-
     }
 }
